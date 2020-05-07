@@ -1,0 +1,23 @@
+#include <stdio.h>
+void main()
+{
+  int n, array[1000], a, b, p;
+  printf("Enter number of elements\n");
+  scanf("%d", &n);
+  printf("Enter %d integers\n", n);
+  for (a = 0; a < n; a++)
+    scanf("%d", &array[a]);
+  for (a = 1 ;a<= n - 1; a++) {
+     b = a;
+     while (b> 0 && array[b-1] > array[b]) {
+     p = array[b];
+     array[b] = array[b-1];
+     array[b-1] = p;
+     b--;
+    }
+}
+printf("Sorted array in ascending order:\n");
+for (a = 0; a <= n - 1; a++) {
+     printf("%d\n", array[a]);
+     }
+}
